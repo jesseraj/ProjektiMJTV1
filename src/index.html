@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TailwindLast</title>
+    <link href="output.css" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+    <link href="video.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+    <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+    <link rel="stylesheet" href="chat.css">
+
+
+</head>
+<body class=" overflow-x-hidden snap-x snap-mandatory mt-[0] h-screen overflow-hidden w-[300vw] overflow-y-scroll no-scrollbar grid grid-flow-row grid-row-1 grid-cols-3">
+
+  <!-- Gridi sivuttaissuunnassa, jossa 3 eri slidea tai "sivua" -->
+
+  <div id="sivu1" class="snap-always snap-center h-screen w-full">
+
+    <!-- Väliaikainen taustakuvaviritelmä -->
+    <!-- bg-gradient-to-r from-purple-500 to-pink-500 -->
+    <style>
+        #sivu1{background-image: url(scifiloop1.jpg);}
+    </style>
+
+
+    <!-- Navbar ja siihen liittyvät linkit -->
+
+    <nav class="bg-musta text-valko border-gray-200 dark:bg-gray-900 flex fixed w-screen z-50">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 flex-1">
+        <a href="#" class="flex items-center">
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Scifi-thon</span>
+        </a>
+        <button id="burger" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
+
+        <!-- Lisää hidden jos nav alkaa toimimaan -->
+        <div id="menu" class=" md:block w-full md:w-auto bg-gray-200 dark:bg-gray-200 " id="navbar-default">
+          <ul class="font-medium flex flex-col p-4 md:p-0 border border-musta bg-musta md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-musta dark:bg-gray-900 md:dark:bg-gray-900 dark:border-musta">
+            <li>
+              <a href="#sivu1" class="block py-2 pl-3 pr-4 text-valko rounded md:bg-transparent md:text-valko md:hover:text-viher md:p-0 dark:text-white md:dark:text-valko md:dark:hover:text-viher" aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="#sivu2" class="block py-2 pl-3 pr-4 text-valko rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-viher md:p-0 dark:text-valko md:dark:hover:text-viher dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Aikataulu</a>
+            </li>
+            <li>
+              <a href="#sivu3" class="block py-2 pl-3 pr-4 text-valko rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-viher md:p-0 dark:text-valko md:dark:hover:text-viher dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Tietoa tapahtumasta</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+    </nav>
+
+
+
+    <!-- Maini ja striimi yms. (videojs aluetta)-->
+
+    <div class="h-5/6 w-screen flex flex-col md:flex-row p-5 z-10 mt-14">
+    
+      <div class="h-full w-6/6 m-5 z-10 md:w-5/6">
+        <!-- Playeri, osa attribuuteista siirretty video.js puolelle testiksi -->
+        <video
+        id="my-video"
+        class="video-js vjs-TeemaMain object-cover w-full h-full shadow-green-500 shadow-2xl"
+        preload="auto"
+        width="auto"
+        height="auto"
+        data-setup="{}"
+        >
+          <source src="video.mp4" type="video/mp4">
+
+          <!-- Tuki mahdolliselle webm variantille yms. -->
+          <!-- 
+              <source src="video/video.webm" type="video/webm">
+          -->
+
+        </video>
+      </div>
+
+
+      <!-- Chattialue -->
+      <div class=" w-6/6 h-full overflow-y-scroll no-scrollbar border-2 md:w-1/4 md:h-1/2 shadow-green-500 shadow-2xl m-5 bg-green-400 opacity-60 z-10 ">
+
+        <div id="login" >
+          <form id="login-form" >
+              <input id="username-input" placeholder="Enter your username..." />
+              <button id="login-button">Join Chat</button>
+          </form>
+        </div>
+        <ul id="messages" class="hidden"></ul>
+        <form id="form" class=" hidden" action="">
+          <input id="input" class="h-full w-full" autocomplete="off" placeholder="Type your message..." /><button>Send</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Tästä alkaa sivu 2 -->
+
+  <div id="sivu2" class="snap-always snap-center h-screen w-screen bg-slate-400">
+
+    <section class="bg-white dark:bg-gray-900 antialiased h-full">
+      <div class="max-w-screen-xl px-4 py-8 mx-auto lg:px-6 sm:py-16 lg:py-24">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-4xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white">
+            Aikataulu
+          </h2>
+    
+          <div class="mt-4">
+            <a href="#sivu1" title=""
+              class="inline-flex items-center text-lg font-medium text-primary-600 hover:underline dark:text-primary-500">
+              Tästä striimiin
+              <svg aria-hidden="true" class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+    
+        <div class="flow-root max-w-3xl mx-auto mt-8 sm:mt-12 lg:mt-16">
+          <div class="-my-4 divide-y divide-gray-200 dark:divide-gray-700">
+            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
+              <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
+                08:00 - 09:00
+              </p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <a href="#" class="hover:underline">Opening remarks</a>
+              </h3>
+            </div>
+    
+            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
+              <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
+                09:00 - 10:00
+              </p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <a href="#" class="hover:underline">Bergside LLC: Controlling the video traffic flows</a>
+              </h3>
+            </div>
+    
+            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
+              <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
+                10:00 - 11:00
+              </p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <a href="#" class="hover:underline">Flowbite - An Open Framework for Forensic Watermarking</a>
+              </h3>
+            </div>
+    
+            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
+              <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
+                11:00 - 12:00
+              </p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <a href="#" class="hover:underline">Coffee Break</a>
+              </h3>
+            </div>
+    
+            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
+              <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
+                12:00 - 13:00
+              </p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <a href="#" class="hover:underline">Scaling your brand from €0 to multimillion euros</a>
+              </h3>
+            </div>
+    
+            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
+              <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
+                13:00 - 14:00
+              </p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <a href="#" class="hover:underline">Updates from the Open Source Multimedia community</a>
+              </h3>
+            </div>
+    
+            <div class="flex flex-col gap-2 py-4 sm:gap-6 sm:flex-row sm:items-center">
+              <p class="w-32 text-lg font-normal text-gray-500 sm:text-right dark:text-gray-400 shrink-0">
+                14:00 - 15:00
+              </p>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <a href="#" class="hover:underline">Exploring the balance between customer acquisition and retention</a>
+              </h3>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- Tästä alkaa sivu 3 -->
+
+  <div id="sivu3" class="snap-always snap-center h-screen w-screen bg-red-400">
+
+
+    <section class="h-full bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
+      <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">We invest in the world’s potential</h1>
+          <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+          <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+              <a href="#sivu1" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                  Striimi
+                  <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+              </a>
+              <a href="#sivu2" class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                  Aikataulu
+              </a>  
+          </div>
+      </div>
+    </section>
+
+  </div>
+
+
+<script src="main.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+
+<!-- Yhdistä chat.js yms jos mahdollista/aikaa -->
+<script src="chatlogic.js"></script>
+
+</body>
+</html>

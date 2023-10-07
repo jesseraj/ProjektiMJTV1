@@ -1,0 +1,26 @@
+
+
+#form { padding: 0.25rem; height: 3rem; box-sizing: border-box; position: absolute; bottom:100px;}
+#input {width: 80%; border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+
+#input:focus { outline: none; }
+#form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+#login {height: 100%; width: 100%;}
+
+#username-input {padding: 2px; width: 100%; border: 1px solid black;}
+
+#login-button {width: 100%; border: 1px solid black;}
+
+#login-form {background-color: aqua; width: 100%; position: relative; top: 89%; }
+
+#messages {width: 100%; overflow-x: hidden; display: flex !important ; flex-wrap: wrap; flex-direction: column-reverse; list-style-type: none; margin: 0; padding: 0; }
+#messages > li { padding: 0.5rem 1rem; text-wrap: wrap; }
+#messages > li:nth-child(odd) { background: #efefef;}
+
+
+@media only screen and (max-width: 768px) {
+    #login-form  {
+    top:75%;
+    }
+}
